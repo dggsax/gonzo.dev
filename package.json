@@ -7,7 +7,6 @@
     "install": "cd client && yarn && cd ../server && yarn",
     "build": "cd client && yarn build",
     "start": "node server/bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

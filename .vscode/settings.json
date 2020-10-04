@@ -1,8 +1,0 @@
-{
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/5eb27968-0ba3-4526-8a55-411daae523ce/resourceGroups/Websites/providers/Microsoft.Web/sites/DanielGonzalez",
-    "appService.deploySubpath": "."
-}

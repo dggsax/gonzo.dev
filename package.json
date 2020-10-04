@@ -6,7 +6,7 @@
   "scripts": {
     "install": "cd client && yarn && cd ../server && yarn",
     "build": "cd client && yarn build",
-    "start": "node server/bin/www",
+    "start": "node server/bin/www"
   },
   "repository": {
     "type": "git",

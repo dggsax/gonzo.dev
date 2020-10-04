@@ -4,8 +4,8 @@
   "description": "Code for gonzo.dev",
   "main": "index.js",
   "scripts": {
-    "install": "cd client && yarn && cd ../server && yarn",
-    "build": "cd client && yarn build",
+    "install": "cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build",
     "start": "node server/bin/www"
   },
   "repository": {

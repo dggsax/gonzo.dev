@@ -4,8 +4,9 @@
 name: Build and deploy container app to Azure Web App - danielgonzalez
 
 on:
+  workflow_dispatch:
   push:
-    branches:
+    branches: 
       - main
 
 jobs:

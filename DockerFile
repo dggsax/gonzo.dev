@@ -1,0 +1,21 @@
+FROM node:alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Copy repo contents to /app
+COPY . /app
+
+# Add node to path
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Go to client dir, install packages, build the client
+WORKDIR /app/client
+RUN npm install
+RUN npm run build
+
+# Go to server dir, install packages
+WORKDIR /app/server
+RUN npm install
+
+CMD ["node", "bin/www"]

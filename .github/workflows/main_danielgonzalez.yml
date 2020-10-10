@@ -1,35 +1,35 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - danielgonzalez
+name: Build and deploy container app to Azure Web App - danielgonzalez
 
 on:
+  workflow_dispatch:
   push:
-    branches:
+    branches: 
       - main
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: 'ubuntu-latest'
 
     steps:
     - uses: actions/checkout@master
 
-    - name: Set up Node.js version
-      uses: actions/setup-node@v1
+    - uses: azure/docker-login@v1
       with:
-        node-version: '12.x'
+        login-server: https://gonzo.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_64a47340a8f64be9b4655c4061eae9e2 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_a2a241045c1141919fb785870089f26e }}
 
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
+    - run: |
+        docker build . -t gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_64a47340a8f64be9b4655c4061eae9e2 }}/gonzo.dev:${{ github.sha }}
+        docker push gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_64a47340a8f64be9b4655c4061eae9e2 }}/gonzo.dev:${{ github.sha }}
 
-    - name: 'Deploy to Azure Web App'
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'danielgonzalez'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6cecd4dcdb4f4f24b46d4699737f1e38 }}
-        package: .
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d1eef7325bbb4296a979fc90a87fa7b8 }}
+        images: 'gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_64a47340a8f64be9b4655c4061eae9e2 }}/gonzo.dev:${{ github.sha }}'

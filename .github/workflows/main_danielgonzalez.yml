@@ -18,17 +18,17 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: https://gonzo.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_e7330966069b4237bbb0221c7593c913 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_c90510dfd579427d82874dad40dd9b37 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_8ed5e5a46de7465ab9aab82faabf8d9f }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_fde818ce48f64497a6d9519bc8321134 }}
 
     - run: |
-        docker build . -t gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e7330966069b4237bbb0221c7593c913 }}/gonzo.dev:${{ github.sha }}
-        docker push gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e7330966069b4237bbb0221c7593c913 }}/gonzo.dev:${{ github.sha }}
+        docker build . -t gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_8ed5e5a46de7465ab9aab82faabf8d9f }}/gonzo.dev:${{ github.sha }}
+        docker push gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_8ed5e5a46de7465ab9aab82faabf8d9f }}/gonzo.dev:${{ github.sha }}
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'danielgonzalez'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0c008233b1294957adf9d15dd87a133e }}
-        images: 'gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_e7330966069b4237bbb0221c7593c913 }}/gonzo.dev:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_32aa29d12d8249a4ba159ca382e757e6 }}
+        images: 'gonzo.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_8ed5e5a46de7465ab9aab82faabf8d9f }}/gonzo.dev:${{ github.sha }}'

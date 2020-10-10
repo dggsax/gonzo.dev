@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Piazzolla';
+    src: local('Piazzolla'), url(./assets/fonts/Piazzolla-VariableFont_opsz\,wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Piazzolla';
+    font-style: italic;
+    src: local('Piazzolla'), url(./assets/fonts/Piazzolla-VariableFont_opsz\,wght.ttf) format('truetype');
+}
+
+body {
+    display: flex;
+    flex: auto;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #f4f3f2;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+        width: 90%;
+        padding-top: 20px;
+    }
+}
+
+h1, p {
+    /* font-family: 'Palatino'; */
+    font-family: 'Piazzolla';
+    color: #1c2833;
+}
+
+p {
+    font-size: larger;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+.c-image {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    white-space: normal;
+    color: #262626;
+    padding: 0;
+    font-size: 100%;
+    font: inherit;
+    text-decoration: none;
+    box-sizing: inherit;
+    border: 0;
+    display: block;
+    margin: 0;
+    height: auto;
+    margin-top: -3px;
+    max-width: none;
+    width: 108px;
+}

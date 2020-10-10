@@ -1,0 +1,78 @@
+@media only screen and (max-width: 900px) {
+    .microsoftBadge {
+        margin: auto;
+    }
+}
+
+.microsoftBadge {
+    height: 450px;
+    width: 260px;
+    position: relative;
+    border-radius: 15px;
+    flex-direction: column;
+    display: flex;
+    margin-top: 20px;
+    -webkit-box-shadow: -1px 1px 10px 1px rgba(191, 191, 191, 1);
+    -moz-box-shadow: -1px 1px 10px 1px rgba(191, 191, 191, 1);
+    box-shadow: -1px 1px 10px 1px rgba(191, 191, 191, 1);
+}
+
+.top {
+    background-color: #3F91E4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    flex-grow: 1;
+    position: relative;
+}
+
+.holeAtTopOfBadge {
+    background-color: #ebe5d9;
+    height: 10px;
+    width: 50px;
+    left: 50%;
+    margin-left: -25px;
+    transform: translate(0px, 20px);
+    border-radius: 10px;
+    position: absolute;
+}
+
+.picture {
+    width: 120px;
+    height: 120px;
+    background-color: pink;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 60px;
+    margin-left: -60px;
+    margin-top: -60px;
+    overflow: hidden;
+}
+
+.headshot {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.bottom {
+    background-color: #FBFBFB;
+    flex-grow: 1;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+}
+
+.name {
+    position: absolute;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+.microsoftLogo {
+    position: absolute;
+    padding-left: 20px;
+    bottom: 20px;
+}
